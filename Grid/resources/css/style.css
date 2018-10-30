@@ -24,8 +24,7 @@ h1{
 .grid-container{
 	width: 1100px;
 	display: grid;
-	grid-template-columns: 139px 137px 137px 137px 137px 137px 137px 139px; 
-	
+	grid-template-columns: 139px 137px 137px 137px 137px 137px 137px 137px 139px;
 	margin: auto auto;
 	padding-top: 5px;
 }
@@ -118,9 +117,6 @@ h1{
 	width: 300px;
 }
 
-.fade-slider p, .nivo-slider p, .bonus-slider p{
-}
-
 .footer{
 	grid-column: 1 / 9;
 	background-image: url(../img/footer_bg.png);
@@ -137,17 +133,17 @@ h1{
 }
 
 .auto1{
-	grid-column: 1 / 8;
+	grid-column: 1 / 9;
 	grid-row: 3;
 }
 
 .auto2{
-	grid-column: 1 / 8;
+	grid-column: 1 / 9;
 	grid-row: 4;
 }
 
 .auto3{
-	grid-column: 1 / 8;
+	grid-column: 1 / 9;
 	grid-row: 5;
 }
 
