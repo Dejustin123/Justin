@@ -1,30 +1,78 @@
-const prijsfris = 2.00;
-const prijsbier = 2.50;
-const prijswijn = 4.50;
+const fris = 2.00;
+const bier = 2.50;
+const wijn = 4.50;
 
 var Hoeveelfris = 0;
 var Hoeveelbier = 0;
 var Hoeveelwijn = 0;
-var hoeveel
-var input;
 
-function AddtoOrder(){
-    while(input != 'stop'){
-        input = prompt('bier,fris of wijn')
-            if(input == 'fris'){ 
-                hoeveel = parseInt(prompt('hoeveel wilt u bestellen?'));
-                Hoeveelfris = Hoeveelfris + hoeveel;
-                AddtoOrder();
-            }
-            else if(input == 'bier'){
-                hoeveel = parseInt(prompt('hoeveel wilt u bestellen?'));
-                Hoeveelbier = Hoeveelbier + hoeveel;
-                AddtoOrder();
-            }
-            else if(input == 'wijn')
-            hoeveel = parseInt(prompt('hoeveel wilt u bestellen?'));
-            Hoeveelwijn = Hoeveelwijn + hoeveel;
-            AddtoOrder();
-            }
+var Aantal
+var keuze
+
+function bestelling() {
+
+    while(keuze != "stop"){
+
+        keuze = prompt("Kies: fris, bier of wijn.");
+
+        if(keuze == "fris"){
+            Aantal = parseInt(prompt("hoeveel fris wilt u?"));
+            Hoeveelfris = Hoeveelfris + Aantal;
+            bestelling();
         }
-        AddtoOrder();
+
+        else if(keuze == "bier"){
+            Aantal = parseInt(prompt("hoeveel bier wilt u?"));
+            Hoeveelbier = Hoeveelbier + Aantal;
+            bestelling();
+        }
+
+        else if(keuze == "wijn"){
+            Aantal = parseInt(prompt("hoeveel wijn wilt u?"));
+            Hoeveelwijn = Hoeveelwijn + Aantal;
+            bestelling();
+        }
+        else if(keuze == "stop"){
+            berekening();
+        }
+
+        else{
+            alert("U kan dit niet hier bestellen.");
+            bestelling();
+        }
+   }
+}
+bestelling();
+
+// function voor bitterballen
+
+function bitterballen(){
+
+}
+
+// function voor bereken van rekening.
+
+function berekening() {
+
+    var Prijsfris = Hoeveelfris * fris
+    var Prijsbier = Hoeveelbier * bier
+    var Prijswijn = Hoeveelwijn * wijn
+    var Totaalprijs = Prijsfris + Prijsbier + Prijswijn;
+
+    if(Hoeveelfris >= 1){
+        document.write("Aantal fris: " + Hoeveelfris + "<br>");
+        document.write("Prijs fris: €" + Prijsfris + "<br>");
+    }
+
+    if(Hoeveelbier >= 1){
+        document.write("Aantal bier: " + Hoeveelbier + "<br>");
+        document.write("Prijs bier: €" + Prijsbier + "<br>");
+    }
+
+    if(Hoeveelwijn >= 1){
+        document.write("Aantal wijn: " + Hoeveelwijn + "<br><br>");
+        document.write("Prijs bier: €" + Prijswijn + "<br>");
+    }
+
+    document.write("<br>Totaal prijs: €" + Totaalprijs);
+}
